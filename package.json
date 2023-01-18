@@ -1,0 +1,23 @@
+{
+  "name": "source_code",
+  "version": "1.0.0",
+  "description": "## Intro to Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgiNedyalkov/Softuni-JS-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgiNedyalkov/Softuni-JS-Backend/issues"
+  },
+  "homepage": "https://github.com/GeorgiNedyalkov/Softuni-JS-Backend#readme",
+  "dependencies": {
+    "is": "^3.3.0"
+  }
+}
