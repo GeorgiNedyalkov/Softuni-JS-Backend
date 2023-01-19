@@ -100,6 +100,14 @@ module.exports = myModule;
 const myModule = require("./myModule.js");
 ```
 
+## Node.js Web Server
+
+Creating an http server with node js.
+
+- What is a web server? All _physical_ servers have _hardware_.
+- _Web servers_ are _software_ products that use the operating systme to _handle web requests_.
+  They serve web content.
+
 ### Additional resources:
 
 - [About Node](https://nodejs.org/en/about/)
