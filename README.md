@@ -108,6 +108,18 @@ Creating an http server with node js.
 - _Web servers_ are _software_ products that use the operating systme to _handle web requests_.
   They serve web content.
 
+### Request and Response Wrappers
+
+_The Request Wrapper_
+
+It used to handle incoming http requests.
+It has several properties, such as:
+
+- httpVersion - 1.1 / 1.0
+- headers - object for request headers
+- method - "GET", "POST"
+- ulr - the Url of the request
+
 ### Additional resources:
 
 - [About Node](https://nodejs.org/en/about/)

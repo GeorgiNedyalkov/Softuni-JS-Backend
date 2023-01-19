@@ -2,7 +2,17 @@ const http = require("http");
 
 // create server
 const server = http.createServer((req, res) => {
-  res.write("Hello from NodeJS");
+  //   routing
+  switch (req.url) {
+    case "/":
+      res.write("Hello from Home");
+      break;
+    case "/cats":
+      res.write("Kitties gang");
+      break;
+    default:
+      res.write("Anything else");
+  }
   res.end();
 });
 
