@@ -31,3 +31,12 @@ npm start and npm test: npm run start, npm run test
 - import it back in the app
 
 3. Set up statis files
+
+- css
+- images
+- handlebar views
+
+4. Set up routes for action on different endpoints
+
+- Extract controllers
+- Create a model
