@@ -120,6 +120,15 @@ It has several properties, such as:
 - method - "GET", "POST"
 - ulr - the Url of the request
 
+_The Response Wrapper_
+
+It is used to retrieve a response to the client.
+Functions:
+
+- Create response header
+- Send content to client
+- End the response
+
 ### Additional resources:
 
 - [About Node](https://nodejs.org/en/about/)

@@ -2,10 +2,15 @@ const http = require("http");
 
 // create server
 const server = http.createServer((req, res) => {
+  // we can specify the content type
+  res.writeHead(200, {
+    "content-type": "text/plain",
+  });
+
   //   routing
   switch (req.url) {
     case "/":
-      res.write("Hello from Home");
+      res.write("<h1>Hello from Home<h1>");
       break;
     case "/cats":
       res.write("Kitties gang");
