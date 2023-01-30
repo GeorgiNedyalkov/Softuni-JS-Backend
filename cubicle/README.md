@@ -30,4 +30,4 @@ npm start and npm test: npm run start, npm run test
 - extract configuration logic to separate folder
 - import it back in the app
 
-3.
+3. Set up statis files
