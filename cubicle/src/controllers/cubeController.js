@@ -19,13 +19,13 @@ exports.getCubeDetails = (req, res) => {
   let cubeId = Number(req.params.cubeId);
 
   if (!cubeId) {
-    return res.redirect("404");
+    return res.redirect("/404");
   }
 
   let cube = db.cubes.find((cube) => cube.id === cubeId);
 
   if (!cube) {
-    return res.redirect("404");
+    return res.redirect("/404");
   }
 
   res.render("details", { cube });
