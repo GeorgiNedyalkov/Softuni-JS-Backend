@@ -15,3 +15,5 @@ npm start and npm test: npm run start, npm run test
 
 1. Create the initial server
    add a configuration file for the port based on different environments: config.js
+2. Set up express handlebars (A Handlebars view engine for Express)
+   npm i express-handlebars

@@ -1,6 +1,6 @@
 const express = require("express");
-const app = express();
 const config = require("./config");
+const app = express();
 
 app.get("/", (req, res) => {
   res.send(`Home Page`);
