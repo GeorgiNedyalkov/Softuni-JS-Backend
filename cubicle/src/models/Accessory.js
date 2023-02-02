@@ -21,3 +21,5 @@ const accessorySchema = new Schema({
 });
 
 const Accessory = new model("Accessory", accessorySchema);
+
+module.exports = Accessory;
