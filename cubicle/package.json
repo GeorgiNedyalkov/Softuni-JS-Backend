@@ -1,7 +1,7 @@
 {
   "name": "cubicle",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Rubik's cubes website",
   "main": "src/index.js",
   "scripts": {
     "start": "SET node_env=production&& node ./src/index.js",

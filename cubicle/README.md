@@ -40,3 +40,7 @@ npm start and npm test: npm run start, npm run test
 
 - Extract controllers
 - Create a model
+
+  02.02.2023
+
+- Add a mongoose database
