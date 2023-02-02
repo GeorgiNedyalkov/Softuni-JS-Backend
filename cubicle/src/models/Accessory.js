@@ -14,8 +14,10 @@ const accessorySchema = new Schema({
     required: true,
     maxLength: 50,
   },
-  cubes: {
-    type: ObjectID,
-    ref: "Cube",
-  },
+  // cubes: {
+  //   type: ObjectID,
+  //   ref: "Cube",
+  // },
 });
+
+const Accessory = new model("Accessory", accessorySchema);
