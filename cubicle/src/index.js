@@ -6,7 +6,9 @@ const setupViewEngine = require("./config/viewEngine");
 const app = express();
 setupViewEngine(app);
 
+// static assets
 app.use(express.static("./src/public"));
+// express middleware use to send req.body
 app.use(express.urlencoded({ extended: false }));
 app.use(routes);
 
