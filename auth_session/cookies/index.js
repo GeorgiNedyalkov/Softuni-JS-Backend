@@ -1,11 +1,21 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const expressSession = require("express-session");
 const morgan = require("morgan");
+
 const app = express();
 const port = 5000;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(
+  expressSession({
+    secret: "secret: it is good to be generated and in a env variable",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true },
+  })
+);
 app.use(morgan("common"));
 
 app.get("/", (req, res) => {
@@ -40,6 +50,8 @@ app.post("/login", (req, res) => {
       username: "Ivan",
     };
     res.cookie("auth", JSON.stringify(authData));
+    req.session.username = "Ivan";
+    req.session.privateInfo = "Some private info";
     return res.redirect("/");
   }
 
@@ -54,6 +66,8 @@ app.get("/profile", (req, res) => {
   }
 
   const { username } = JSON.parse(authData);
+
+  console.log(req.session);
 
   res.send(`
     <h2>Hello - ${username}</h2>
