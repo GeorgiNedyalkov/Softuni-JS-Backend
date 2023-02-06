@@ -107,3 +107,13 @@ app.post("/login", (req, res) => {
   res.status(401).end(); // status 401 unauthorized
 });
 ```
+
+## Session
+
+How to make a session?
+
+- install express-session
+- set up the the session
+- set the session with req to set and get info
+
+## Authentication Security
