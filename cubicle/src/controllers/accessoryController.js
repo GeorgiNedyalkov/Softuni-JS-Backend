@@ -13,12 +13,4 @@ router.post("/create", async (req, res) => {
   res.redirect("/");
 });
 
-router.get("/attach", (req, res) => {
-  res.render("accessory/attach");
-});
-
-router.get("/create/:accessoryId", (req, res) => {
-  res.send(`Hi, there number ${req.params.accessoryId}`);
-});
-
 module.exports = router;
