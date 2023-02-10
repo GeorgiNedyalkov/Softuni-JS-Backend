@@ -2,6 +2,8 @@ const Cube = require("../models/Cube");
 const Accessory = require("../models/Accessory");
 
 exports.getCreateCube = (req, res) => {
+  console.log("req.user");
+  console.log(req.user);
   res.render("create");
 };
 
