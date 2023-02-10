@@ -2,6 +2,7 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
 const morgan = require("morgan");
+const dataService = require("./dataService");
 
 const app = express();
 const port = 5000;
@@ -23,11 +24,14 @@ app.get("/", (req, res) => {
   <h1>Home Page</h1>
   <p><a href="/login">Login</a></p>
   <p><a href="/profile">Profile</a></p>
+  <p><a href="/register">Register</a></p>
+  <p><a href="/logout">Logout</a></p>
   `);
 });
 
 app.get("/login", (req, res) => {
   res.send(`
+        <h1>Sign In</h1>
         <form method="POST">
             <label for="username" name="username" id="username">
             Username
@@ -42,20 +46,47 @@ app.get("/login", (req, res) => {
     `);
 });
 
-app.post("/login", (req, res) => {
+app.get("/register", (req, res) => {
+  res.send(`
+        <h1>Sign Up</h1>
+        <form method="POST">
+            <label for="username" name="username" id="username">
+            Username
+                <input type="text" name="username">
+            </label>
+            <label for="password" name="password" id="password">
+            Password
+                <input type="password" name="password">
+            </label>
+            <input type="submit" value="register">
+        </form>
+  `);
+});
+
+app.get("/logout", (req, res) => {
+  res.clearCookie("auth");
+  res.redirect("/");
+});
+
+app.post("/register", async (req, res) => {
+  const { username, password } = req.body;
+  await dataService.registerUser(username, password);
+  res.redirect("/login");
+});
+
+app.post("/login", async (req, res) => {
   const { username, password } = req.body;
 
-  if (username == "Ivan" && password == "peti") {
-    const authData = {
-      username: "Ivan",
-    };
-    res.cookie("auth", JSON.stringify(authData));
-    req.session.username = "Ivan";
-    req.session.privateInfo = "Some private info";
-    return res.redirect("/");
-  }
+  try {
+    const token = await dataService.loginUser(username, password);
 
-  res.status(401).end();
+    res.cookie("token", token, { httpOnly: true });
+    // req.session.username = user.username;
+    // req.session.privateInfo = user.password;
+  } catch (error) {
+    console.log(error);
+    res.status(401).end();
+  }
 });
 
 app.get("/profile", (req, res) => {
@@ -66,8 +97,6 @@ app.get("/profile", (req, res) => {
   }
 
   const { username } = JSON.parse(authData);
-
-  console.log(req.session);
 
   res.send(`
     <h2>Hello - ${username}</h2>

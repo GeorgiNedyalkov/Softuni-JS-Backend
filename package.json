@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/GeorgiNedyalkov/Softuni-JS-Backend#readme",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "is": "^3.3.0"
   }
 }

@@ -1,5 +1,13 @@
 # Using Cookies
 
+Resources:
+
+- [What are cookies?](https://www.section.io/engineering-education/what-are-cookies-nodejs/)
+- [Http Cookies](https://www.geeksforgeeks.org/http-cookies-in-node-js/)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [jwt](https://jwt.io/)
+- [npm jwt](https://www.npmjs.com/package/jsonwebtoken)
+
 ## HTTP Communication
 
 HTTP is _stateless_. In order to perserve state, _cookies_ are stored on the _Client_.
@@ -117,3 +125,17 @@ How to make a session?
 - set the session with req to set and get info
 
 ## Authentication Security
+
+- _Authentication_ is an important part of _application security_
+- It servers to verify whether the client is who or what it declares itself to be.
+- It is built on several layers of abstraction Cookies -> Sessions -> Security
+- Authentication is a _cross-cutting concern_, best handled away from business logic.
+- Request -> Authentication -> Business Logic -> Response
+
+## Bcrypt
+
+- password hashing adaptive function
+- incorporating _salt_ to prevent against _rainbow table_ attacks.
+- plain text - hash function - hash text
+
+- What is the difference between hashing and encrypting.
