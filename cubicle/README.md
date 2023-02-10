@@ -48,3 +48,11 @@ npm start and npm test: npm run start, npm run test
 ## Working with JWT
 
 - Install jwt and cookie-parser
+- Where to build the token (service or controller). Better in service
+- Build the token
+- import jwt
+- Create a payload
+- Add secret to config file
+- Sign with JWT, payload, secret and options
+- import util and use promisify to turn them into promises
+-
