@@ -55,4 +55,6 @@ npm start and npm test: npm run start, npm run test
 - Add secret to config file
 - Sign with JWT, payload, secret and options
 - import util and use promisify to turn them into promises
--
+
+in controller:
+set the cookie
