@@ -44,3 +44,7 @@ npm start and npm test: npm run start, npm run test
   02.02.2023
 
 - Add a mongoose database
+
+## Working with JWT
+
+- Install jwt and cookie-parser
