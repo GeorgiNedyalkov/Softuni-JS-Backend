@@ -22,7 +22,7 @@ exports.getCubeDetails = async (req, res) => {
     return res.redirect("/404");
   }
 
-  res.render("details", { cube });
+  res.render("cube/details", { cube });
 };
 
 exports.getAttachAccessory = async (req, res) => {
