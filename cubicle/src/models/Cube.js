@@ -13,12 +13,21 @@ const cubeSchema = new mongoose.Schema({
   imageUrl: {
     type: String,
     required: true,
-    // add http/ https validation
   },
   difficultyLevel: {
     type: Number,
     min: 1,
     max: 6,
+  },
+  accessories: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Accessory",
+    },
+  ],
+  onwer: {
+    type: mongoose.Types.ObjectId,
+    ref: "User",
   },
 });
 
